@@ -1,12 +1,14 @@
+import { Outlet } from "react-router-dom"
+import Navbar from "./components/Navbar/Navbar"
+import Footer from "./components/Footer/Footer"
 
 function App() {
 
   return (
     <>
-      <div>
-          <h1 className="text-5xl text-red-800 font-bold">Doing Basic Set Up</h1>
-          <button className="btn btn-secondary">button check</button>
-      </div>
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+        <Footer></Footer>
     </>
   )
 }
