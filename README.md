@@ -52,6 +52,7 @@
     VITE_MESSAGING_SENDER_ID= your_messaging_sender_id
     VITE_APP_ID= your_app_id
 
+
 5. Run the project
-    ```bash
+   ```bash
     npm run dev
