@@ -16,7 +16,7 @@
 
 - **React.js**: Frontend framework for building the user interface.
 - **Tailwind CSS**: Utility-first CSS framework for styling and responsive design.
-- **Firebase**: Used for authentication and deployment of the application.
+- **Firebase**: Used for authentication.
 - **Axios**: For making API requests to the backend.
 - **React Router**: For handling routing within the application.
 
