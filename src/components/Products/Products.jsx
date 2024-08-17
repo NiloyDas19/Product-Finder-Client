@@ -183,7 +183,7 @@ const Products = () => {
                     <div className="flex flex-col items-center">
                         <div className="flex justify-between items-center w-full mb-4">
                             <button
-                                className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+                                className="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-gray-400"
                                 onClick={handlePrevious}
                                 disabled={currentPage === 1}
                             >
@@ -201,7 +201,7 @@ const Products = () => {
                                 ))}
                             </div>
                             <button
-                                className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+                                className="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-gray-400"
                                 onClick={handleNext}
                                 disabled={currentPage === productData.pagination.totalPages}
                             >
