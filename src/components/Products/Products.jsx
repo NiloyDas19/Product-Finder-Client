@@ -29,12 +29,28 @@ const Products = () => {
         }
     });
 
+    const handlePrevious = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (productData && currentPage < productData.pagination.totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
 
     if (isProductsLoading) {
         return <h2>Loading....</h2>
     }
 
-    if(isProductsError){
+    if (isProductsError) {
         return <h2>Error to fetch data...</h2>
     }
 
@@ -45,6 +61,38 @@ const Products = () => {
                     <ProductCard product={product} key={product._id}></ProductCard>
                 ))}
             </div>
+
+            {productData.products.length > 0 && (
+                <div className="flex flex-col items-center">
+                    <div className="flex justify-between items-center w-full mb-4">
+                        <button
+                            className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+                            onClick={handlePrevious}
+                            disabled={currentPage === 1}
+                        >
+                            Previous
+                        </button>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                            {[...Array(productData.pagination.totalPages)].map((_, index) => (
+                                <button
+                                    key={index + 1}
+                                    className={`px-3 py-1 rounded-lg ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
+                                    onClick={() => handlePageChange(index + 1)}
+                                >
+                                    {index + 1}
+                                </button>
+                            ))}
+                        </div>
+                        <button
+                            className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400"
+                            onClick={handleNext}
+                            disabled={currentPage === productData.pagination.totalPages}
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
