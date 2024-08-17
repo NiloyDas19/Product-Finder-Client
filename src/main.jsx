@@ -8,11 +8,11 @@ import {
 } from "react-router-dom";
 import App from './App.jsx';
 import Home from './components/Home/Home.jsx';
-import AllProducts from "./components/AllProducts/AllProducts";
 import Login from "./components/Login/Login.jsx";
 import SignUp from "./components/SignUp/SignUp.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import NotFound from './components/NotFound.jsx';
 const queryClient = new QueryClient();
 
 
@@ -20,14 +20,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: '/',
         element: <Home></Home>
-      },
-      {
-        path: "/all-products",
-        element: <AllProducts></AllProducts>
       },
       {
         path: "/login",

@@ -32,10 +32,7 @@ const Navbar = () => {
 
     const navLinks = <>
         <li>
-            <Link to="/" className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded px-3 py-2">Home</Link>
-        </li>
-        <li>
-            <Link to="/all-products" className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded px-3 py-2">All Products</Link>
+            <Link to="/" className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded px-3 py-2">All Products</Link>
         </li>
         {
             user ?
