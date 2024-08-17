@@ -109,7 +109,7 @@ const Products = () => {
             {/* Searching based on the query */}
             <form onSubmit={handleSearchSubmit} className="mb-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="flex w-full">
+                    <div className="flex md:w-full">
                         <input
                             type="text"
                             placeholder="Search by product name..."
